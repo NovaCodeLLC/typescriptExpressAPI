@@ -59,7 +59,16 @@ export class Server {
      * @class Server
      */
     public api() {
+        let router: express.Router;
+        router = express.Router();
 
+        //use cors middleware
+        router.use(cors());
+
+        //add your routes
+        //
+
+        this.app.use(router);
     }
 
 
