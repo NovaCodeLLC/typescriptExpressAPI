@@ -8,6 +8,7 @@ import * as path from "path";
 import errorHandler = require("errorhandler");
 import mongoose = require("mongoose");
 import * as cors from "cors";
+import {UserAPI} from "./api/UserRoutes";
 
 
 
@@ -59,6 +60,7 @@ export class Server {
      * @class Server
      */
     public api() {
+
         let router: express.Router;
         router = express.Router();
 
@@ -66,7 +68,7 @@ export class Server {
         router.use(cors());
 
         //add your routes
-        //
+        UserAPI.create(router);
 
         this.app.use(router);
     }
@@ -108,3 +110,4 @@ export class Server {
         this.app.use(errorHandler());
     }
 }
+
