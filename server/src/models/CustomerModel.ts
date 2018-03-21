@@ -8,6 +8,6 @@ import { CustomerInterface as ICustomer } from "../interfaces/CustomerInterface"
 
 export interface customerModel extends ICustomer, Document {}
 
-export interface customerModelStatic extends Model{}
+export interface customerModelStatic extends Model<customerModel>{}
 
 export const Customer = mongoose.model<customerModel, customerModelStatic>('Customer', customerSchema);

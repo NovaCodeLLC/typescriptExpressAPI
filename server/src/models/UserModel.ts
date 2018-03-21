@@ -3,11 +3,11 @@
  */
 import mongoose = require('mongoose');
 import { Model, Document } from "mongoose";
-import { UserInterface as IUser } from "../interfaces/user";
+import { UserInterface as IUser } from "../interfaces/UserInterface";
 import { userSchema } from "../schemas/UserSchema";
 
 export interface userModel extends IUser, Document {}
 
-export interface userModelStatic extends Model{}
+export interface userModelStatic extends Model<userModel>{}
 
 export const User = mongoose.model<userModel, userModelStatic>('User', userSchema);
