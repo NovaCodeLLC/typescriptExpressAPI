@@ -67,7 +67,6 @@ export class Server {
         router.use(cors());
 
         //add your routes
-        UserAPI.create(router);
 
 
         this.app.use(router);
